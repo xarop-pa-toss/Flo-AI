@@ -1,5 +1,5 @@
 # OpieFlo-AI
-A voiced personal assistant split into two "personalities", Opie (ChatGPT) and Flo (DialogFlow with APIs to multiple external services)
+A voiced personal assistant split into two "personalities", Opie (conversational with ChatGPT) and Flo (functional with DialogFlow and APIs to multiple external services)
 
 The app starts by taking in voice commands in .mp3 format and transcribing them to text using an STT service.
 Then it searches for the word "Flo" or "Opie" and routes the request to one of those entities...
