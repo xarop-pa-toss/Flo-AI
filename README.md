@@ -1,4 +1,4 @@
-# OpieFlo-AI
+# Flo-AI
 A voiced personal assistant split that uses Google's DialogFlow and OpenAIs ChatGPT. It will use multiple RESTful APIs to operate many different services, for example Google Calendar.
 
 The app starts by taking in voice commands in .mp3 format and transcribing them to text using an STT service (Vosk). DialogFlow then decides what to do with the command and utilizes ChatGPT to make conversation!
