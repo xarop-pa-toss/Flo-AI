@@ -2,7 +2,6 @@ package viper
 
 import (
 	"errors"
-	"fmt"
 
 	"github.com/spf13/viper"
 )
@@ -13,8 +12,7 @@ func LoadConfig() error {
 	viper.AutomaticEnv()
 
 	if err := viper.ReadInConfig(); err != nil {
-		fmt.Println("Error reading configuration file: ", err)
-		return fmt.Errorf("error reading configuration file: %w", err)
+		return errors.New("VIPER - Error reading configuration file")
 	}
 
 	return nil

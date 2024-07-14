@@ -19,3 +19,6 @@
 
 # Go workspace file
 go.work
+
+# Viper Config
+viperconfig.yaml
