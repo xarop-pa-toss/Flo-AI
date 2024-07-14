@@ -5,19 +5,32 @@ import (
 	"log"
 	"os"
 
+	"Flo-AI/cmd/internal/openai"
 	"Flo-AI/cmd/internal/viper"
 	"Flo-AI/cmd/internal/whisperstt"
 )
 
 func main() {
-
+	// LOAD Viper
 	if err := viper.LoadConfig(); err != nil {
 		panic(err.Error())
 	}
-	// if err := openai.LoadConfig(); err != nil {
-	// 	panic(err.Error())
-	// }
 
+	// LOAD OpenAI
+	apiKey, err := viper.GetString("OPENAI_TOKEN")
+	if err != nil {
+		log.Fatalf("MAIN - viper could not get OPENAI_TOKEN: %s", err)
+	}
+	config := openai.Config{
+		APIKey: apiKey,
+	}
+
+	client, err := openai.NewClient(config)
+	if err != nil {
+		log.Fatalf("MAIN - could not create OpenAI Client: %s", err)
+	}
+
+	// LOAD Whisper
 	// Initialize Whisper instance
 	wh, err := whisperstt.New()
 	if err != nil {

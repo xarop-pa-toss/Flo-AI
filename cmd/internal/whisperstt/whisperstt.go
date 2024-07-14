@@ -86,6 +86,7 @@ func (whisperObj *WhisperSTT) TranscribeStreamToText(audioStream io.Reader) (str
 		return "", fmt.Errorf("WHISPER_05 - Bad HTTP response. Status: %d", response.StatusCode)
 	}
 
+	// Read response
 	responseBody, err := io.ReadAll(response.Body)
 	if err != nil {
 		return "", fmt.Errorf("WHISPER_06 - Error reading HTTP response. Status: %d. Error: %v", response.StatusCode, err)

@@ -7,7 +7,11 @@ require github.com/spf13/viper v1.19.0
 require github.com/sashabaranov/go-openai v1.26.2
 
 require (
+	github.com/MarkKremer/microphone v1.2.0 // indirect
+	github.com/beep/beep v0.0.0-20210427194017-48096b79e5a8 // indirect
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
+	github.com/gopxl/beep v1.4.1 // indirect
+	github.com/gordonklaus/portaudio v0.0.0-20230709114228-aafa478834f5 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
