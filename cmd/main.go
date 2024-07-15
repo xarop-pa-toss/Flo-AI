@@ -25,7 +25,7 @@ func main() {
 		APIKey: apiKey,
 	}
 
-	client, err := openai.NewClient(config)
+	client := openai.NewClient(config)
 	if err != nil {
 		log.Fatalf("MAIN - could not create OpenAI Client: %s", err)
 	}
@@ -37,6 +37,7 @@ func main() {
 		panic(err.Error())
 	}
 
+	// TRANSCRIBE AUDIO FILE AND SEND TO GPT
 	// Open audio file into memory
 	audioFile, err := os.Open("audio_files/Recording.m4a")
 	if err != nil {
@@ -51,4 +52,6 @@ func main() {
 	} else {
 		fmt.Println(transcript)
 	}
+
+	client.MakeRequest(transcript)
 }
