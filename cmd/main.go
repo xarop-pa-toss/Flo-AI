@@ -96,11 +96,14 @@ func main() {
 	}
 
 	// LOAD Viper
+	fmt.Print("Viper... ")
 	if err := viper.LoadConfig(); err != nil {
 		panic(err.Error())
 	}
+	fmt.Println("OK")
 
 	// LOAD OpenAI
+	fmt.Print("Reaching Flo... ")
 	apiKey, err := viper.GetString("OPENAI_TOKEN")
 	if err != nil {
 		log.Fatalf("MAIN - viper could not get OPENAI_TOKEN: %s", err)
@@ -113,8 +116,10 @@ func main() {
 	if err != nil {
 		log.Fatalf("MAIN - could not create OpenAI Client: %s", err)
 	}
+	fmt.Println("OK")
 
 	// LOAD Whisper
+	fmt.Print("Whisper... ")
 	// Initialize Whisper instance
 	wh, err := whisperstt.New()
 	if err != nil {
@@ -136,6 +141,7 @@ func main() {
 	} else {
 		fmt.Println(transcript)
 	}
+	fmt.Print("OK")
 
 	client.MakeRequest(transcript)
 }
