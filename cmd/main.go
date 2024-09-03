@@ -53,5 +53,5 @@ func main() {
 		fmt.Println(transcript)
 	}
 
-	client.MakeRequest(transcript)
+	fmt.Println(client.MakeRequest(transcript))
 }
